@@ -117,6 +117,7 @@ static __cxx_contention_t __libcpp_contention_monitor_for_wait(__cxx_atomic_cont
                                                                __cxx_atomic_contention_t const volatile* __platform_state)
 {
     // We will monitor this value.
+    (void)__contention_state;
     return __cxx_atomic_load(__platform_state, memory_order_acquire);
 }
 static void __libcpp_contention_wait(__cxx_atomic_contention_t volatile* __contention_state,
