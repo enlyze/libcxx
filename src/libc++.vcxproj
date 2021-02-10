@@ -101,7 +101,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <WarningLevel>Level4</WarningLevel>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>-march=pentium-mmx %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-march=pentium-mmx</AdditionalOptions>
       <AdditionalIncludeDirectories>$(ProjectDir)\..\include</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -122,7 +122,7 @@
       <WarningLevel>Level4</WarningLevel>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>-flto -march=pentium-mmx %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-flto -march=pentium-mmx</AdditionalOptions>
       <AdditionalIncludeDirectories>$(ProjectDir)\..\include</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
