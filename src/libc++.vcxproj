@@ -50,6 +50,11 @@
     <ClCompile Include="variant.cpp" />
     <ClCompile Include="vector.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="winpthreads\src\winpthreads.vcxproj">
+      <Project>{d3faca21-d165-4b1e-9a06-a9b58964886c}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -86,13 +91,11 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\..\build\$(Configuration)\$(ProjectName)\bin\</OutDir>
     <IntDir>$(SolutionDir)\..\build\$(Configuration)\$(ProjectName)\obj\</IntDir>
-    <PublicIncludeDirectories>$(ProjectDir)\..\include</PublicIncludeDirectories>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)\..\build\$(Configuration)\$(ProjectName)\bin\</OutDir>
     <IntDir>$(SolutionDir)\..\build\$(Configuration)\$(ProjectName)\obj\</IntDir>
-    <PublicIncludeDirectories>$(ProjectDir)\..\include</PublicIncludeDirectories>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

@@ -1,0 +1,3 @@
+[submodule "src/winpthreads"]
+	path = src/winpthreads
+	url = https://github.com/enlyze/winpthreads.git
