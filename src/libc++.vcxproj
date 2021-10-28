@@ -101,7 +101,7 @@
     <ClCompile>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_LIBCPP_BUILDING_LIBRARY;_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <WarningLevel>Level4</WarningLevel>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalOptions>-march=pentium-mmx</AdditionalOptions>
@@ -121,7 +121,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_LIBCPP_BUILDING_LIBRARY;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <WarningLevel>Level4</WarningLevel>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
