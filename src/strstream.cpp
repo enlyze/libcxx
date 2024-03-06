@@ -1,4 +1,4 @@
-//===------------------------ strstream.cpp -------------------------------===//
+//===----------------------------------------------------------------------===//
 //
 // Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
 // See https://llvm.org/LICENSE.txt for license information.
@@ -6,13 +6,16 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "strstream"
-#include "algorithm"
-#include "climits"
-#include "cstring"
-#include "cstdlib"
-#include "__debug"
-#include "__undef_macros"
+#include <__assert>
+#include <__utility/unreachable.h>
+#include <algorithm>
+#include <climits>
+#include <cstdlib>
+#include <cstring>
+#include <strstream>
+
+_LIBCPP_PUSH_MACROS
+#include <__undef_macros>
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
@@ -170,7 +173,7 @@ strstreambuf::overflow(int_type __c)
         if (buf == nullptr)
             return int_type(EOF);
         if (old_size != 0) {
-            _LIBCPP_ASSERT(eback(), "overflow copying from NULL");
+            _LIBCPP_ASSERT_UNCATEGORIZED(eback(), "overflow copying from NULL");
             memcpy(buf, eback(), static_cast<size_t>(old_size));
         }
         ptrdiff_t ninp = gptr()  - eback();
@@ -268,7 +271,7 @@ strstreambuf::seekoff(off_type __off, ios_base::seekdir __way, ios_base::openmod
             newoff = seekhigh - eback();
             break;
         default:
-            _LIBCPP_UNREACHABLE();
+            __libcpp_unreachable();
         }
         newoff += __off;
         if (0 <= newoff && newoff <= seekhigh - eback())
@@ -333,3 +336,5 @@ strstream::~strstream()
 }
 
 _LIBCPP_END_NAMESPACE_STD
+
+_LIBCPP_POP_MACROS
