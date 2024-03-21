@@ -1,0 +1,12 @@
+// [Colin Finck, 2021-02-10] Some important lines that a regular libc++ build process
+// would prepend to __config:
+
+#ifndef _LIBCPP_CONFIG_SITE
+#define _LIBCPP_CONFIG_SITE
+
+#define _LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS
+#define _LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS
+#define _LIBCPP_HAS_THREAD_API_PTHREAD
+#define _LIBCPP_PSTL_CPU_BACKEND_THREAD
+
+#endif

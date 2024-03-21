@@ -20,19 +20,31 @@
     <ClCompile Include="chrono.cpp" />
     <ClCompile Include="condition_variable.cpp" />
     <ClCompile Include="condition_variable_destructor.cpp" />
-    <ClCompile Include="debug.cpp" />
     <ClCompile Include="exception.cpp" />
+    <ClCompile Include="filesystem\directory_entry.cpp" />
+    <ClCompile Include="filesystem\directory_iterator.cpp" />
+    <ClCompile Include="filesystem\filesystem_clock.cpp" />
+    <ClCompile Include="filesystem\filesystem_error.cpp" />
+    <ClCompile Include="filesystem\operations.cpp" />
+    <ClCompile Include="filesystem\path.cpp" />
     <ClCompile Include="functional.cpp" />
     <ClCompile Include="future.cpp" />
     <ClCompile Include="hash.cpp" />
     <ClCompile Include="ios.cpp" />
+    <ClCompile Include="ios.instantiations.cpp" />
     <ClCompile Include="iostream.cpp" />
+    <ClCompile Include="legacy_debug_handler.cpp" />
+    <ClCompile Include="legacy_pointer_safety.cpp" />
     <ClCompile Include="locale.cpp" />
     <ClCompile Include="memory.cpp" />
+    <ClCompile Include="memory_resource.cpp" />
     <ClCompile Include="mutex.cpp" />
     <ClCompile Include="mutex_destructor.cpp" />
     <ClCompile Include="new.cpp" />
+    <ClCompile Include="new_handler.cpp" />
+    <ClCompile Include="new_helpers.cpp" />
     <ClCompile Include="optional.cpp" />
+    <ClCompile Include="print.cpp" />
     <ClCompile Include="random.cpp" />
     <ClCompile Include="random_shuffle.cpp" />
     <ClCompile Include="regex.cpp" />
@@ -45,10 +57,10 @@
     <ClCompile Include="system_error.cpp" />
     <ClCompile Include="thread.cpp" />
     <ClCompile Include="typeinfo.cpp" />
-    <ClCompile Include="utility.cpp" />
     <ClCompile Include="valarray.cpp" />
     <ClCompile Include="variant.cpp" />
     <ClCompile Include="vector.cpp" />
+    <ClCompile Include="verbose_abort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="winpthreads\src\winpthreads.vcxproj">
@@ -100,11 +112,11 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_LIBCPP_BUILDING_LIBRARY;_CRT_SECURE_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <PreprocessorDefinitions>WIN32;_LIBCPP_BUILDING_LIBRARY;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <WarningLevel>Level4</WarningLevel>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalOptions>-march=pentium-mmx</AdditionalOptions>
+      <AdditionalOptions>-march=pentium-mmx -Wno-unused-parameter -Wno-microsoft-include -Wno-deprecated-declarations</AdditionalOptions>
       <AdditionalIncludeDirectories>$(ProjectDir)\..\include</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
@@ -121,11 +133,11 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_LIBCPP_BUILDING_LIBRARY;_CRT_SECURE_NO_WARNINGS;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
       <WarningLevel>Level4</WarningLevel>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalOptions>-flto -march=pentium-mmx</AdditionalOptions>
+      <AdditionalOptions>-flto -march=pentium-mmx -Wno-unused-parameter -Wno-microsoft-include -Wno-deprecated-declarations</AdditionalOptions>
       <AdditionalIncludeDirectories>$(ProjectDir)\..\include</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>

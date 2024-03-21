@@ -1,4 +1,4 @@
-//===--------------------- mutex_destructor.cpp ---------------------------===//
+//===----------------------------------------------------------------------===//
 //
 // Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
 // See https://llvm.org/LICENSE.txt for license information.
@@ -16,19 +16,19 @@
 // we re-declare the entire class in this file instead of using
 // _LIBCPP_BUILDING_LIBRARY to change the definition in the headers.
 
-#include "__config"
-#include "__threading_support"
+#include <__config>
+#include <__threading_support>
 
 #if !defined(_LIBCPP_HAS_NO_THREADS)
-#if _LIBCPP_ABI_VERSION == 1 || !defined(_LIBCPP_HAS_TRIVIAL_MUTEX_DESTRUCTION)
-#define NEEDS_MUTEX_DESTRUCTOR
-#endif
+#  if _LIBCPP_ABI_VERSION == 1 || !defined(_LIBCPP_HAS_TRIVIAL_MUTEX_DESTRUCTION)
+#    define NEEDS_MUTEX_DESTRUCTOR
+#  endif
 #endif
 
 _LIBCPP_BEGIN_NAMESPACE_STD
 
 #ifdef NEEDS_MUTEX_DESTRUCTOR
-class _LIBCPP_TYPE_VIS mutex
+class _LIBCPP_EXPORTED_FROM_ABI mutex
 {
     __libcpp_mutex_t __m_ = _LIBCPP_MUTEX_INITIALIZER;
 
@@ -41,7 +41,7 @@ public:
 };
 
 
-mutex::~mutex() _NOEXCEPT
+mutex::~mutex() noexcept
 {
     __libcpp_mutex_destroy(&__m_);
 }
